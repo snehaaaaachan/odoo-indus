@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Inventory Pro – Complete Inventory Management System with real-time stock tracking, receipts, deliveries, and warehouse management.">
+  <title>Inventory Pro – Inventory Management System</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Prevent FOUC */
+    #app-root.hidden {
+      display: none;
+    }
+
+    #auth-root.hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AUTH PAGES (login, signup, OTP) -->
+  <div id="auth-root"></div>
+
+  <!-- MAIN APP SHELL (rendered after login) -->
+  <div id="app-root" class="hidden" style="display:none"></div>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div id="toast-container"></div>
+
+  <!-- ============================================
+       JavaScript – Load order matters
+       ============================================ -->
+  <!-- 1. Data layer first -->
+  <script src="js/data.js"></script>
+
+  <!-- 2. Auth module -->
+  <script src="js/auth.js"></script>
+
+  <!-- 3. Views -->
+  <script src="js/dashboard.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/operations.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/settings.js"></script>
+
+  <!-- 4. Main router / app shell (boots on DOMContentLoaded) -->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
